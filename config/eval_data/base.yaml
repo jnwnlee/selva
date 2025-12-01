@@ -1,0 +1,18 @@
+infer_video:
+  video_path: ./infer_video/video
+  jsonl_path: ./infer_video/jsonl
+  
+vggsound:
+  video_path: ./data/vggsound/video
+  # from the official released csv file
+  csv_path: ./data/vggsound/vggsound.csv
+  gt_cache: ./data/vggsound/test/gt_cache
+
+example_video:
+  video_path: ./training/example_videos
+  csv_path: ./training/example_video_test.csv
+
+example_bench:
+  video_path: ./training/example_bench/video
+  jsonl_path: ./training/example_bench/jsonl
+  gt_cache: ./training/example_bench/gt_cache

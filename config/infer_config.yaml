@@ -1,0 +1,45 @@
+defaults:
+  - base_config
+  - override hydra/job_logging: custom-simplest
+  - _self_
+
+hydra:
+  run:
+    dir: ./output/exp/${exp_id}
+  output_subdir: eval-${now:%Y-%m-%d_%H-%M-%S}-hydra
+
+exp_id: selva_sup_5
+
+### model ###
+video_enc:
+  model: 
+    factory_path: selva.model.networks_video_enc.get_my_textsynch
+    name: depth1
+    empty_str_feat_path: ./ext_weights/flant5_empty_string_feat.pth
+    params:
+      num_sup_text_tokens: 5
+      sync_batch_size_multiplier: ${sync_batch_size_multiplier}
+  weights: ./weights/video_enc_sup_5.pth
+generator:
+  model: 
+    factory_path: selva.model.networks_generator.get_my_mmaudio
+    name: small_16k
+  weights: ./weights/generator_small_16k_sup_5.pth
+
+#### inference ###
+dataset: infer_video # vgg_monoaudio_intra vgg_monoaudio_inter infer_video vggsound
+use_negative_caption: False
+duration_s: 8.0 # 30.0 for infer_video
+
+compile: True
+batch_size: 4 # total GPU
+sync_batch_size_multiplier: 64 # per-GPU
+extract_batch_size: 100 # a6000: 100 for audio
+num_workers: 5 # per-GPU
+output_name: null
+
+### checkpoint paths to external modules ###
+synchformer_ckpt: ./ext_weights/synchformer_state_dict.pth
+vae_16k_ckpt: ./ext_weights/v1-16.pth
+vae_44k_ckpt: ./ext_weights/v1-44.pth
+bigvgan_vocoder_ckpt: ./ext_weights/best_netG.pt

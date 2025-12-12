@@ -97,11 +97,11 @@ These datasets are subject to specific licenses, which can be accessed on their 
 ## Citation
 
 ```bibtex
-@inproceedings{selva,
-  title={},
-  author={},
-  booktitle={},
-  year={}
+@article{selva,
+  title={Hear What Matters! Text-conditioned Selective Video-to-Audio Generation},
+  author={Lee, Junwon and Nam, Juhan and Lee, Jiyoung},
+  journal={arXiv preprint arXiv:2512.02650},
+  year={2025}
 }
 ```
 

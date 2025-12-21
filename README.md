@@ -5,7 +5,7 @@ arxiv preprint. <br/>
 Keywords: Video-to-Audio Generation, Selective Sound Generation, Multimodal Deep Learning.
 
 
-[![arXiv](https://img.shields.io/badge/arXiv-2512.xxxxx-brightgreen.svg?style=flat-square)]()  [![githubio](https://img.shields.io/badge/GitHub.io-Demo_page-blue?logo=Github&style=flat-square)](https://jnwnlee.github.io/selva-demo/)  [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue)](https://huggingface.co/jnwnlee/SelVA)
+[![arXiv](https://img.shields.io/badge/arXiv-2512.02650-brightgreen.svg?style=flat-square)](https://arxiv.org/pdf/2512.02650)  [![githubio](https://img.shields.io/badge/GitHub.io-Demo_page-blue?logo=Github&style=flat-square)](https://jnwnlee.github.io/selva-demo/)  [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue)](https://huggingface.co/jnwnlee/SelVA)
 
 
 <table>

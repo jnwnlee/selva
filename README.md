@@ -53,8 +53,8 @@ pip install -e .
 
 **Pretrained models:**
 
-The models will be downloaded automatically when you run the demo script. MD5 checksums are provided in `selva/utils/download_utils.py`.
-The models are also available at https://huggingface.co/jnwnlee/SelVA/tree/main
+The models will be downloaded automatically when you run the demo script. MD5 checksums are provided in `selva/utils/download_utils.py`. <br/>
+The models are also available at https://huggingface.co/jnwnlee/SelVA/tree/main. Place weights of SelVA at `./weights/` folder, and external weights at `./ext_weights` folder. <br/>
 Refer to [MODELS.md](docs/MODELS.md) for further details.
 
 ## Demo

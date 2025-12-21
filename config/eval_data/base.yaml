@@ -2,7 +2,7 @@ infer_video:
   video_path: ./infer_video/video
   jsonl_path: ./infer_video/jsonl
   
-vggsound:
+vggsound: # test split
   video_path: ./data/vggsound/video
   # from the official released csv file
   csv_path: ./data/vggsound/vggsound.csv

@@ -2,7 +2,7 @@
 
 ## Batch Inference
 
-To evaluate the model on a dataset, use the `batch_eval.py` script. It is significantly more efficient in large-scale evaluation compared to `demo.py`, supporting batched inference, multi-GPU inference, torch compilation, and skipping video compositions.
+To evaluate the model on a dataset, use the `batch_inference.py` script. It is significantly more efficient in large-scale evaluation compared to `demo.py`, supporting batched inference, multi-GPU inference.
 
 An example of running this script with four GPUs is as follows:
 
@@ -16,4 +16,5 @@ More configuration options can be found in `config/base_config.yaml` and `config
 
 ## Obtaining Quantitative Metrics
 
-For evaluation, install requirements by following instructions in: [av-benchmark](https://github.com/hkchengrex/av-benchmark), and [kadtk](https://github.com/YoonjinXD/kadtk).
+For evaluation, install requirements by following instructions in: [av-benchmark](https://github.com/hkchengrex/av-benchmark), and [kadtk](https://github.com/YoonjinXD/kadtk). <br/>
+After running <i>av-benchmark</i>, update the path of `gt_cache` in  `config/eval_data/base.yaml`.

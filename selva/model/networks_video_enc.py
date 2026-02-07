@@ -158,7 +158,7 @@ class TextSynch(TextSynchformer):
 
 
 def depth1(**kwargs) -> TextSynch:
-    return TextSynch(text_dim=768, # 2048 for xl
+    return TextSynch(text_dim=768,
                      video_seq_len=192,
                      max_text_seq_len=512,
                      xattn_depth=1,

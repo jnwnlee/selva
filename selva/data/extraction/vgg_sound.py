@@ -53,7 +53,6 @@ class VGGSound(Dataset):
         videos = sorted(os.listdir(self.root))
         videos = set([Path(v).stem for v in videos])  # remove extensions
         self.labels = {}
-        self.captions = {}
         self.videos = []
         missing_videos = []
 
@@ -102,10 +101,7 @@ class VGGSound(Dataset):
     def sample(self, idx: int) -> dict[str, torch.Tensor]:
         video_id = self.videos[idx]
         
-        if video_id in self.captions and torch.rand(1).item() < self.autoacd_sample_prob:
-            label = self.captions[video_id]
-        else:
-            label = self.labels[video_id]
+        label = self.labels[video_id]
             
         reader = StreamingMediaDecoder(self.root / (video_id + '.mp4'))
         reader.add_basic_video_stream(

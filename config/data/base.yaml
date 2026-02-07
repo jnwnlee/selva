@@ -1,6 +1,5 @@
 VGGSound:
   root: ./data/vggsound/video
-  subset_name: ./sets/vgg-train.tsv
   fps: 8
   height: 384
   width: 384
@@ -10,7 +9,6 @@ VGGSound:
 
 VGGSound_test:
   root: ./data/vggsound/video
-  subset_name: ./sets/vgg-test.tsv
   fps: 8
   height: 384
   width: 384
@@ -23,7 +21,6 @@ VGGSound_test:
 
 VGGSound_val:
   root: ./data/vggsound/video
-  subset_name: ./sets/vgg-val.tsv
   fps: 8
   height: 384
   width: 384
@@ -34,25 +31,12 @@ VGGSound_val:
   memmap_dir: ./output/memmap/vgg-val.memmap
 
 Example_video:
-  # tsv: ./training/example_output/memmap/vgg-example.tsv
-  # memmap_dir: ./training/example_output/memmap/vgg-example
   root: ./training/example_videos
-  subset_name: ./training/example_video.tsv
   fps: 8
   height: 384
   width: 384
   sample_duration_sec: 8.0
   tag: example_video
   output_subdir: example_video
-
-Example_bench:
-  # tsv: ./training/example_output/memmap/vgg-example.tsv
-  # memmap_dir: ./training/example_output/memmap/vgg-example
-  root: ./training/example_bench/video
-  subset_name: ./training/example_bench.tsv
-  fps: 8
-  height: 384
-  width: 384
-  sample_duration_sec: 8.0
-  tag: example_bench
-  output_subdir: example_bench
+  tsv: ./training/example_output/memmap/vgg-example.tsv
+  memmap_dir: ./training/example_output/memmap/vgg-example

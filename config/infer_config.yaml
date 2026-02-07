@@ -15,7 +15,6 @@ video_enc:
   model: 
     factory_path: selva.model.networks_video_enc.get_my_textsynch
     name: depth1
-    empty_str_feat_path: ./ext_weights/flant5_empty_string_feat.pth
     params:
       num_sup_text_tokens: 5
       sync_batch_size_multiplier: ${sync_batch_size_multiplier}

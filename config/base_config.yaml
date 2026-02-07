@@ -15,11 +15,11 @@ model: None
 ### data loader ###
 # NOTE: This DOSE NOT affect the model during inference in any way
 data_dim:
-  text_flant5_max_seq_len: 512
   sync_dim: 768
+  clip_dim: 1024
+  text_flant5_max_seq_len: 512
   text_flant5_dim: 768
   text_clip_seq_len: 77
-  clip_dim: 1024
   text_clip_dim: 1024
 
 ### training ###

@@ -173,12 +173,12 @@ def setup_eval_dataset(dataset_name: str, cfg: DictConfig) -> tuple[Dataset, Dat
                                      duration_sec=cfg.duration_s)
         cfg.batch_size = 1
     elif dataset_name.startswith('example_video'):
-        dataset = VGGSoundEval(cfg.eval_data.example_video.video_path,
-                               cfg.eval_data.example_video.csv_path,
+        dataset = VGGSoundEval(cfg.eval_data.Example_video.video_path,
+                               cfg.eval_data.Example_video.csv_path,
                                duration_sec=cfg.duration_s)
     elif dataset_name.startswith('example_bench'):
-        dataset = VGGMonoAudioBench(cfg.eval_data.example_bench.video_path,
-                                    cfg.eval_data.example_bench.jsonl_path,
+        dataset = VGGMonoAudioBench(cfg.eval_data.Example_bench.video_path,
+                                    cfg.eval_data.Example_bench.jsonl_path,
                                     duration_sec=cfg.duration_s)
     elif dataset_name in ['vgg_monoaudio_intra', 'vgg_monoaudio_inter']:
         dataset = VGGMonoAudioBench(cfg.eval_data[dataset_name].video_path,

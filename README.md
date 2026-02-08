@@ -5,7 +5,7 @@ arxiv preprint. <br/>
 Keywords: Video-to-Audio Generation, Selective Sound Generation, Multimodal Deep Learning.
 
 
-[![arXiv](https://img.shields.io/badge/arXiv-2512.02650-brightgreen.svg?style=flat-square)](https://arxiv.org/pdf/2512.02650)  [![githubio](https://img.shields.io/badge/GitHub.io-Demo_page-blue?logo=Github&style=flat-square)](https://jnwnlee.github.io/selva-demo/)  [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue)](https://huggingface.co/jnwnlee/SelVA)
+[![arXiv](https://img.shields.io/badge/arXiv-2512.02650-brightgreen.svg?style=flat-square)](https://arxiv.org/pdf/2512.02650)  [![githubio](https://img.shields.io/badge/GitHub.io-Demo_page-blue?logo=Github&style=flat-square)](https://jnwnlee.github.io/selva-demo/)  [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue)](https://huggingface.co/jnwnlee/SelVA)  [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Benchmark-blue)](https://huggingface.co/datasets/jnwnlee/vgg-monoaudio)
 
 
 <table>
@@ -91,7 +91,7 @@ These datasets are subject to specific licenses, which can be accessed on their 
 
 - [ ] add training and example bench.
 - [ ] add model variants.
-- [ ] add VGG-MonoAudio.
+- [x] add VGG-MonoAudio.
 
 
 ## Citation

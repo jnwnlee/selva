@@ -20,7 +20,7 @@ from selva.data.data_setup import setup_eval_dataset
 from selva.utils.eval_utils import ModelConfig, all_model_cfg, load_video, make_video
 from selva.model.flow_matching import FlowMatching
 from selva.model.networks_video_enc import TextSynch
-from selva.model.networks_generator import MMAudio, get_my_mmaudio
+from selva.model.networks_generator import MMAudio
 from selva.model.utils.features_utils import FeaturesUtils
 from selva.model.utils.factory import create_model_from_factory
 from selva.utils.eval_utils import generate
@@ -54,9 +54,9 @@ def main(cfg: DictConfig):
     if cfg.generator.model.name not in all_model_cfg:
         raise ValueError(f'Unknown model variant: {cfg.generator.model.name}')
     model_cfg: ModelConfig = all_model_cfg[cfg.generator.model.name]
-    video_enc_ckpt_path = Path(HydraConfig.get().run.dir) / f'{cfg.exp_id}_ema_final.pth' # Example adjustment
+    video_enc_ckpt_path = Path(cfg.video_enc.get('weights', model_cfg.model_video_enc_path))
     if not video_enc_ckpt_path.exists():
-        video_enc_ckpt_path = Path(cfg.video_enc.get('weights', model_cfg.model_video_enc_path))
+        video_enc_ckpt_path = Path(HydraConfig.get().run.dir) / f'{cfg.exp_id}_ema_final.pth'
         if not video_enc_ckpt_path.exists():
             model_cfg.download_video_enc_if_needed()
     generator_ckpt_path = Path(cfg.generator.get('weights', model_cfg.model_generator_path))
@@ -72,6 +72,7 @@ def main(cfg: DictConfig):
         **cfg.video_enc.model.get('params', {}),
     ).to(device).eval()
     if video_enc_ckpt_path.exists():
+        print(f'Loading weights from {video_enc_ckpt_path}')
         net_video_enc.load_weights(torch.load(video_enc_ckpt_path, map_location=device, weights_only=True))    
         log.info(f'TextSynch: Loaded weights from trained ckpt {video_enc_ckpt_path}')
     else:
@@ -79,7 +80,11 @@ def main(cfg: DictConfig):
         log.info(f'TextSynch: Loaded weights from {model_cfg.model_video_enc_path}')
     net_video_enc.update_seq_lengths(video_seq_len=model_cfg.seq_cfg.sync_seq_len)
     # load MMAudio
-    net_generator: MMAudio = get_my_mmaudio(cfg.generator.model.name).to(device).eval()
+    net_generator: MMAudio = create_model_from_factory(
+        cfg.generator.model.factory_path,
+        cfg.generator.model.name,
+        **cfg.generator.model.get('params', {})
+    ).to(device).eval()
     if generator_ckpt_path.exists():
         net_generator.load_weights(torch.load(generator_ckpt_path, map_location=device, weights_only=True))    
         log.info(f'MMAudio: Loaded weights from trained ckpt {generator_ckpt_path}')

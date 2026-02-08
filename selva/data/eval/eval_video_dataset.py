@@ -215,12 +215,12 @@ class VGGMonoAudioBench(VideoDataset):
         self.captions = {}
         self.negative_captions = {}
 
-        df = pd.read_csv(csv_path, header=0, usecols=['filename', 'label', 'paired_label']
+        df = pd.read_csv(csv_path, header=0, usecols=['file_name', 'label', 'paired_label']
                          ).to_dict(orient='records')
 
         videos_no_found = []
         for row in df:
-            video_name = row['filename']
+            video_name = str(Path(row['file_name']).stem)
             if video_name + '.mp4' not in videos:
                 videos_no_found.append(video_name)
                 continue

@@ -64,8 +64,29 @@ small_16k = ModelConfig(model_name='small_16k',
                         vae_path=Path('./ext_weights/v1-16.pth'),
                         bigvgan_16k_path=Path('./ext_weights/best_netG.pt'),
                         mode='16k')
+small_44k = ModelConfig(model_name='small_44k',
+                        model_video_enc_path=Path('./weights/video_enc_sup_5.pth'),
+                        model_generator_path=Path('./weights/generator_small_44k_sup_5.pth'),
+                        vae_path=Path('./ext_weights/v1-44.pth'),
+                        bigvgan_16k_path=None,
+                        mode='44k')
+medium_44k = ModelConfig(model_name='medium_44k',
+                         model_video_enc_path=Path('./weights/video_enc_sup_5.pth'),
+                         model_generator_path=Path('./weights/generator_medium_44k_sup_5.pth'),
+                         vae_path=Path('./ext_weights/v1-44.pth'),
+                         bigvgan_16k_path=None,
+                         mode='44k')
+large_44k = ModelConfig(model_name='large_44k',
+                        model_video_enc_path=Path('./weights/video_enc_sup_5.pth'),
+                        model_generator_path=Path('./weights/generator_large_44k_sup_5.pth'),
+                        vae_path=Path('./ext_weights/v1-44.pth'),
+                        bigvgan_16k_path=None,
+                        mode='44k')
 all_model_cfg: dict[str, ModelConfig] = {
     'small_16k': small_16k,
+    'small_44k': small_44k,
+    'medium_44k': medium_44k,
+    'large_44k': large_44k,
 }
 
 

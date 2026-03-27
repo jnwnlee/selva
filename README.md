@@ -1,6 +1,6 @@
 # SelVA: Hear What Matters! Text-conditioned Selective Video-to-Audio Generation
 
-Official PyTorch implementation of "Hear What Matters! Text-conditioned Selective Video-to-Audio Generation". <br/>
+[CVPR 2026] Official PyTorch implementation of "Hear What Matters! Text-conditioned Selective Video-to-Audio Generation". <br/>
 arxiv preprint. <br/>
 Keywords: Video-to-Audio Generation, Selective Sound Generation, Multimodal Deep Learning.
 
@@ -90,7 +90,7 @@ These datasets are subject to specific licenses, which can be accessed on their 
 ## Updates
 
 - [ ] add training and example bench.
-- [ ] add model variants.
+- [x] add model variants.
 - [x] add VGG-MonoAudio.
 
 

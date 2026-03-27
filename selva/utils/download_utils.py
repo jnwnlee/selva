@@ -19,6 +19,21 @@ links = [
         'md5': '1cb0f0deec52de37f67b1fd9965337d0'
     },
     {
+        'name': 'generator_small_44k_sup_5.pth',
+        'url': 'https://huggingface.co/jnwnlee/SelVA/resolve/main/weights/generator_small_44k_sup_5.pth',
+        'md5': 'd4df8569624093ac80af99b8b7434525'
+    },
+    {
+        'name': 'generator_medium_44k_sup_5.pth',
+        'url': 'https://huggingface.co/jnwnlee/SelVA/resolve/main/weights/generator_medium_44k_sup_5.pth',
+        'md5': 'e9157e62b4863ad306e89e8f3a587748'
+    },
+    {
+        'name': 'generator_large_44k_sup_5.pth',
+        'url': 'https://huggingface.co/jnwnlee/SelVA/resolve/main/weights/generator_large_44k_sup_5.pth',
+        'md5': 'ab3db08b124d3aaa53eb7a1f52f1fb3f'
+    },
+    {
         'name': 'v1-16.pth',
         'url': 'https://huggingface.co/jnwnlee/SelVA/resolve/main/ext_weights/v1-16.pth',
         'md5': '69f56803f59a549a1a507c93859fd4d7'

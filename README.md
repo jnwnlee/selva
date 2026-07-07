@@ -27,6 +27,8 @@ We assume using [miniforge](https://github.com/conda-forge/miniforge) environmen
 - Python 3.9+
 - PyTorch **2.6.0+** and corresponding torchvision/torchaudio (pick your CUDA version https://pytorch.org/, pip install recommended)
 
+> Note: Python 3.10 is recommended for the current dependency set. The bundled Synchformer/AST code is compatible with Transformers 4.27.4. Using newer Transformers versions may fail because internal APIs such as `find_pruneable_heads_and_indices` were removed or moved.
+
 **1. Install prerequisite:**
 
 ```bash
